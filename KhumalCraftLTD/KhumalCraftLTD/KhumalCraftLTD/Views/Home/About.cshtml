@@ -1,0 +1,28 @@
+﻿@model KhumalCraftLTD.Models.Users
+
+@{
+    ViewData["Title"] = "About";
+}
+
+<h1>About Khumalo Craft LTD</h1>
+<p>Welcome to Khumalo Craft LTD! We are passionate about connecting artisans worldwide with discerning customers like you.</p>
+<p>At KhumalCraftLTD, we showcase a curated selection of handcrafted products, each crafted with care and creativity. Whether you're looking for unique home decor, exquisite jewelry, or one-of-a-kind gifts, you'll find something special in our collection.</p>
+<p>Ready to explore our offerings? Make an account with us to stay updated on our latest products and promotions.</p>
+
+<h2>Register</h2>
+
+<form asp-controller="User" asp-action="About" method="post">
+    <div class="form-group">
+        <label for="Name">First Name</label>
+        <input type="text" class="form-control" id="Name" name="Name" placeholder="Enter your first name" required>
+    </div>
+    <div class="form-group">
+        <label for="Surname">Last Name</label>
+        <input type="text" class="form-control" id="Surname" name="Surname" placeholder="Enter your last name" required>
+    </div>
+    <div class="form-group">
+        <label for="Email">Email address</label>
+        <input type="email" class="form-control" id="Email" name="Email" placeholder="Enter your email address" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

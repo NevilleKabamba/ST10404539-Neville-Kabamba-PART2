@@ -1,0 +1,54 @@
+﻿@model KhumalCraftLTD.Models.Order
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Order Confirmation</h1>
+        <p>Thank You For Your Support!</p>
+
+        <p><strong>Order ID:</strong> @Model.OrderId</p>
+        <p><strong>Order Date:</strong> @Model.OrderDate</p>
+
+        <h2>Order Details</h2>
+        @if (Model.OrderDetails != null && Model.OrderDetails.Count > 0)
+        {
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var detail in Model.OrderDetails)
+                    {
+                        <tr>
+                            <td>@detail.Product.ProductName</td>
+                            <td>@detail.Quantity</td>
+                            <td>@detail.Product.ProductPrice.ToString("0.00")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <p><strong>Total: </strong>@Model.OrderDetails.Sum(d => d.Product.ProductPrice * d.Quantity).ToString("0.00")</p>
+        }
+        else
+        {
+            <p>No order details available.</p>
+        }
+
+        <a href="@Url.Action("MyWork", "Home")" class="btn btn-primary">Return</a>
+    </div>
+</body>
+</html>
+
+
+

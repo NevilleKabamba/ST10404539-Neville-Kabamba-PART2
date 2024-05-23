@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<h1>Contact Us</h1>
+<p>Have a question or feedback for us? We'd love to hear from you! Please fill out the form below and we'll get back to you as soon as possible.</p>
+
+<form>
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" id="Name" placeholder="Enter your name" required>
+    </div>
+    <div class="form-group">
+        <label for="Email">Email address</label>
+        <input type="email" class="form-control" id="Email" placeholder="Enter your email address" required>
+    </div>
+    <div class="form-group">
+        <label for="Message">Message</label>
+        <textarea class="form-control" id="Message" rows="5" placeholder="Enter your message" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
